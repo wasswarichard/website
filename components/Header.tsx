@@ -16,7 +16,7 @@ const Header = () => {
             <Image src="/vercel.svg" alt="Logo" width={50} height={50} />
           </Link>
         </div>
-        <nav className="flex space-x-8">
+        <nav className="flex space-x-12">
           {menuItems.map((menuItem, index) => (
             <div key={index} className="relative group">
               <Link
