@@ -44,7 +44,7 @@ const Header = () => {
                 onMouseLeave={() => setActiveMenuItem(null)}
               >
                 {menuItem.dropdownItems.map((dropdownItem, idx) => (
-                  <div key={idx} >
+                  <div key={idx}>
                     <Link
                       href={dropdownItem.href}
                       className="block px-4 py-2 text-gray-700 hover:text-gray-900 whitespace-nowrap"
