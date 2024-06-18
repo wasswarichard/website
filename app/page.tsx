@@ -1,5 +1,5 @@
 import Image from "next/image";
-import backGroudImage from "../assets/img_1.png";
+import backGroudImage from "../assets/img.png";
 
 export default function Home() {
   return (
