@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { menuItems } from "@/constants/menus";
-import {Facebook, Instagram, X, LinkedIn} from '@mui/icons-material';
+import { Facebook, Instagram, X, LinkedIn } from "@mui/icons-material";
 
 export const Footer = () => {
   return (
@@ -21,19 +21,18 @@ export const Footer = () => {
                     </Link>
                   </li>
                 ))}
-
               </ul>
             </div>
           ))}
+          <div>
+            <h2 className="text-lg font-normal">Social Media</h2>
             <div>
-                <h2 className="text-lg font-normal">Social Media</h2>
-                <div>
-                    <Instagram/>
-                    <X/>
-                    <Facebook/>
-                    <LinkedIn/>
-                </div>
+              <Instagram />
+              <X />
+              <Facebook />
+              <LinkedIn />
             </div>
+          </div>
         </div>
         <p className="text-gray-700 mt-4">
           © 2024 Hugamara. All rights reserved.

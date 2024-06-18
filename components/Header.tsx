@@ -18,28 +18,41 @@ const Header = () => {
         </div>
         <nav className="flex space-x-12">
           {menuItems.map((menuItem, index) => (
-            <div key={index} className="relative group">
-              <Link
-                href={menuItem.href}
-                className="text-gray-700 hover:text-blue-600 hover:underline"
+            <div
+              key={index}
+              className="relative group"
+              onMouseEnter={() => setActiveMenuItem(index)}
+              onMouseLeave={() => setActiveMenuItem(null)}
+            >
+              <div
+                className={`text-gray-700 hover:text-blue-600 hover:underline cursor-pointer ${
+                  activeMenuItem === index && "text-blue-600"
+                }`}
               >
-                {menuItem.name}
-              </Link>
-              <div className="hidden group-hover:block absolute top-full right-0 left-0 bg-white mt-5 w-full">
-                <div className="w-full">
-                  {menuItem.dropdownItems.map((dropdownItem, idx) => (
+                <Link href={menuItem.href}>
+                  <span>{menuItem.name}</span>
+                </Link>
+              </div>
+
+              <div
+                className={`absolute top-full left-0 bg-white ${
+                  activeMenuItem === index
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
+                }`}
+                onMouseEnter={() => setActiveMenuItem(index)}
+                onMouseLeave={() => setActiveMenuItem(null)}
+              >
+                {menuItem.dropdownItems.map((dropdownItem, idx) => (
+                  <div key={idx} >
                     <Link
-                      key={idx}
                       href={dropdownItem.href}
-                      className={`text-gray-700 hover:text-gray-900 mx-2 relative ${idx !== 0 ? "mt-2" : ""}`}
+                      className="block px-4 py-2 text-gray-700 hover:text-gray-900 whitespace-nowrap"
                     >
                       {dropdownItem.name}
-                      {idx !== 0 && (
-                        <span className="absolute left-0 top-0 h-full border-l border-gray-200"></span>
-                      )}
                     </Link>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
