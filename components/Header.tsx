@@ -1,74 +1,12 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageIcon from "@mui/icons-material/Language";
+import { menuItems } from "@/constants/menus";
+import { useState } from "react";
 
 const Header = () => {
-  const menuItems = [
-    {
-      name: "About us",
-      href: "/",
-      dropdownItems: [
-        { name: "Home Option 1", href: "/home-option1" },
-        { name: "Home Option 2", href: "/home-option2" },
-      ],
-    },
-    {
-      name: "Our Companies",
-      href: "/about",
-      dropdownItems: [
-        { name: "About Option 1", href: "/about-option1" },
-        { name: "About Option 2", href: "/about-option2" },
-      ],
-    },
-    {
-      name: "Innovations",
-      href: "/services",
-      dropdownItems: [
-        { name: "Service Option 1", href: "/service-option1" },
-        { name: "Service Option 2", href: "/service-option2" },
-      ],
-    },
-    {
-      name: "Sustainability",
-      href: "/contact",
-      dropdownItems: [
-        { name: "Contact Option 1", href: "/contact-option1" },
-        { name: "Contact Option 2", href: "/contact-option2" },
-      ],
-    },
-    {
-      name: "News & Media",
-      href: "/contact",
-      dropdownItems: [
-        { name: "Contact Option 1", href: "/contact-option1" },
-        { name: "Contact Option 2", href: "/contact-option2" },
-      ],
-    },
-    {
-      name: "Careers",
-      href: "/contact",
-      dropdownItems: [
-        { name: "Contact Option 1", href: "/contact-option1" },
-        { name: "Contact Option 2", href: "/contact-option2" },
-      ],
-    },
-    {
-      name: "Investors",
-      href: "/contact",
-      dropdownItems: [
-        { name: "Contact Option 1", href: "/contact-option1" },
-        { name: "Contact Option 2", href: "/contact-option2" },
-      ],
-    },
-    {
-      name: "Contact Us",
-      href: "/contact",
-      dropdownItems: [
-        { name: "Contact Option 1", href: "/contact-option1" },
-        { name: "Contact Option 2", href: "/contact-option2" },
-      ],
-    },
-  ];
+  const [activeMenuItem, setActiveMenuItem] = useState<null | number>(null);
 
   return (
     <header className="bg-gray-100 p-6 sticky top-0 z-50">
